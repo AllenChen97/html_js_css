@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- 
+			form 	
+				action 提交表单的地址
+				method 提交表单的方式
+					get
+					post
+				target 打开方式
+					_self 当前窗口
+					_blank 空白窗口
+					
+			get和post请求的区别：
+				1.get请求的参数会跟在url后面
+				2.get请求相对没那么安全
+				3.get传递的参数长度有限，post没有限制（长度与服务器有关）
+				4.get请求可以将数据缓存在浏览器中（即本地磁盘中），所以get比post快
+
+			Input
+				type
+					text 		文本框
+					password 	密码框
+					radio 		单选框
+				value 默认值
+				readonly 只读
+				maxlength
+		-->
+		<form action="http://www.baidu.com" method="get">
+			<h3>一、文本框</h3>
+			文本框：<input type="text" value="zhangsan" maxlength="10" name="name">  </input>	<br/> <br/>
+			只读文本框：<input type="type" value="zhangsan" readonly="readonly"> </input><br/> <br/>
+			密码框：<input type="password"><br/> <br/>
+			
+			<label for="uname" >姓名</label>
+			<input type="text" value="zhangsan" maxlength="10" id="uname"> <br>
+			多行文本框：<textarea rows="20" cols="30"></textarea>
+			
+			<h3>二、选项框</h3>
+			<h5>注：单选框和复选框都需要加name，不然无法区分开哪个是多选哪个是单选</h5>
+			单选框：<input type="radio" value="male" name="sex"  />男 <input type="radio" name="sex" value="female" />女<br/> <br/>
+			复选框：<input type="checkbox" value="male" name="sex"  />1 
+					<input type="radio" name="sex" value="female" />2 <br/> <br/>
+			文件域：<input type="file" /> <br/> <br/>
+			隐藏域：<input type="hidden" name="" id="" value="" />
+			
+			<h3>三、下拉框</h3>
+			<select name="opt">
+				<option value="">请选择城市</option>
+				<option>上海</option>
+				<option selected="selected">北京</option>
+				<option>广州</option>
+				<option>深圳</option>
+			</select>
+			
+			<br>
+			
+			<select name="opt" size=2 disabled="disabled">
+				<option>上海</option>
+				<option>北京</option>
+				<option>广州</option>
+				<option>深圳</option>
+			</select>
+			
+			<h3>四 、按钮</h3>
+			普通按钮：<input type="button" value="普通按钮" disabled="disabled" />	<br>
+			<h5>注：不写name标签无法提交！！</h5>
+			提交按钮：<input type="submit" value="提交按钮"/>	<br>
+			重置按钮：<input type="reset" value="重置按钮" />	<br>
+			日期按钮：<input type="date" value="日期按钮" />	<br>
+			
+			<button type="button">普通按钮</button>	<br>
+			<button type="submit">提交按钮</button>	<br>
+			<button type="reset">重置按钮</button>	<br>
+		</form>
+	</body>
+</html>

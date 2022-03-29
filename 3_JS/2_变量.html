@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+    <body>
+    <!--
+        一、注意点：
+            1.如果声明 没有赋值会显示undefined
+            2.如果未声明也未赋值，会报错
+            3.一条var命令中可以declare multi variables
+            4.使用var声明一个已存在的变量 是无效的
+            5.使用var declare 一个已存在的变量并赋值 会覆盖
+            6.Js 是一种动态类型、弱类型语言，跟python一样变量的类型没有限制
+        二、 变量提升
+            js引擎的工作机制：先解析代码——>获取被声明的变量——>再一行一行的运行
+            这会造成所有variable declaration 会被提前到代码的头部
+    -->
+        <script type="text/javascript">
+            // 一、变量使用
+            console.log("\n2.如果未声明也未赋值，旧版本才会报错？");
+            console.log(name);
+
+            console.log("\n3.一条var命令中可以declare multi variables");
+            var a=1, b=2, c=3;
+            console.log(a,b,c);
+
+            console.log("\n4.使用var声明一个已存在的变量 是无效的");
+            var a;
+            console.log(a);
+
+            console.log("\n5.使用var declare 一个已存在的变量并赋值 会覆盖");
+            var b=2222;
+            console.log(b);
+
+            // 二、变量提升，两端代码相同
+            console.log("\n二、变量提升，两端代码相同")
+            console.log(msg);
+            var msg = "so easy";
+
+
+            var msg;
+            console.log(msg);
+            msg = "so easy";
+
+            //
+
+            console.log("\n三、函数调用");
+            function test(str) {
+                var str;
+                console.log(str);
+            }
+            test("aaa");
+        </script>
+
+    </body>
+</html>

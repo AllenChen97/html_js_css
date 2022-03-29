@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <!--
+        一、Bom
+            1. 消息提示框：alert()
+            2. 输入框：prompt()
+            3. 确认框：confirm()
+            4. 打开和关闭窗口
+
+
+    -->
+<body>
+    <!-- 1. 消息提示框：alert() -->
+    <button type="button" onclick="alert('消息框')">消息框</button>
+    <br><br>
+    <!-- 2. 输入框：prompt() -->
+    <button id="prt" type="button" onclick="prt()">输入框</button>
+    <br><br>
+    <!-- 3.确认框：confirm() -->
+    <button id="cfm" type="button" onclick="cf()">确认框</button>
+    <br><br>
+    <!-- 4. 打开和关闭窗口 -->
+    <button id="op" type="button" onclick="open()">打开窗口</button> <!-- 括号里可以指定网页，还可以加一个参数,"_self"指定在本页面中打开-->
+    <br>
+    <button id="cl" type="button" onclick="closeTest()">关闭窗口</button>
+
+</body>
+<script>
+    function prt() {
+        name = prompt("请输入您的名字：","");
+        console.log(name);
+    }
+
+    function cf() {
+        var isName = confirm("请输入您的名字："+ name);
+        if (isName){
+            alert("好的");
+        } else{
+            alert("没事别瞎点");
+        }
+    }
+
+    function closeTest(){
+        window.close();
+    }
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <!--
+        一、数组
+            1. 创建方法
+                var arr = [a,b,c];
+                var arr = Array(a,b,c);
+                var arr = Array(长度);
+            2. 长度 arr.length
+            3. 查询 arr[0]
+            4. 改、增 元素 arr[0] = "",该属性 arr["uname"] = "admin"
+            5. 循环：
+                5.1. for 不遍历属性
+                5.2. for in 不遍历属性和索引中的undefined
+                5.3. forEach 不遍历索引中的undefined   （下面的测试中 for in 和 forEach相反了！ forEach 没有属性）
+            6.方法：
+                6.1. push       将元素添加到 最后
+                6.2. unshift    将元素添加到 最前
+                6.3. pop        弹出最后一个
+                6.4. shift      删第一个
+                6.5. reverse    反转
+                6.6. join       数组转化成字符串，同python
+                6.7. indexof    查一个出现的索引位置
+                6.8. slice      截取，原数组不变
+                6.9. split     剪数据，原数组改变
+                6.10. concat    合并
+    -->
+<body>
+    <script>
+        console.log("1. 数组属性");
+        var arr = [3,4,5];
+        arr["uname"] = "admin";
+        console.log(arr);
+
+        console.log("2. for in 循环")
+        for (var index in arr) {
+            console.log("index: " + index);
+            console.log("value: " + arr[index]);    //最后把属性名"uname"打印出来了
+        }
+
+        console.log("3. for each 循环");
+        arr.forEach(function(element,index){
+            console.log(index +"==>"+ element);
+        })
+
+        console.log("4. 数组方法");
+        arr[3] = 9;
+        arr.push(10);
+        console.log(arr.indexOf(5));
+        console.log(arr.slice(1,3));    //[4,5] 注意：包前 不包后
+
+
+        console.log(arr.splice(1,2));   //[4,5] 注意：包前 包后
+        console.log(arr);               //原数组arr变成了[3,9,10]
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <!--
+        一、数据类型（在F12中有颜色的是有数据类型的）
+            1. Number: Integer, Float 17位精度, 1.0自动会转换成Int
+            2. String
+            3. Boolean: true, false
+            4. Undefined: 未定义或不存在
+                4.1.报undefined的3种情况
+                    a)声明了变量未赋值
+                    b)函数有形参，调用时未提供
+                    c)函数没有返回值，默认返回undefined
+            5.Null typeof null = Object, 未初始化的变量(Undefined)和null相等
+            6.Object
+                1.对象: List, Dict
+                2.数组: Array([1,2,3])
+                3.函数(function)
+    -->
+<body>
+    <script>
+        console.log("1. 类型转换函数，注意一下特殊情况");
+        console.log(parseInt("64"));
+        console.log(parseInt("abc64abc"));      //NaN
+        console.log(parseInt("64abc65"));       //64
+        console.log(parseInt("abc"));           //NaN
+        console.log(parseInt(64.98));
+
+        console.log(parseFloat("64.01"));
+        console.log(parseFloat("64.01.03"));    //64.01
+
+        console.log("2. 强制转换");
+        console.log(Number("64"));
+        console.log(Number("abc64"));           // 因强制转换的对象是整个"abc64"字符串，不会像parseInt那样转换部分，所以会报NaN
+        console.log(Number("5.6.7"));           // NaN
+
+        var nu = null;
+        console.log(String(nu));                //null
+
+        console.log("3. 四舍五入，其实可以用Math包");
+        var num = 3.1415926;
+        console.log(num.toFixed(2));            // 3.14
+        console.log(Math.ceil(num));            // 3.15
+    </script>
+</body>
+</html>

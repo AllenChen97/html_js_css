@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+        一、基础用法
+            1.行内js
+                html标签中
+            2.内部js
+                script标签中，通常写在body标签后（推荐），写在body中也行
+            3.外部js
+                引入js文件
+    -->
+
+    <!-- 2.内部js -->
+    <button type="button" onclick="alert('Hello')">按钮</button>
+
+    <script type="text/javascript">
+        // alert("你好")
+        //    一访问就弹出
+    </script>
+
+    <!-- 3.外部引入 -->
+    <script src="JS/new_file.js" type="text/javascript" charset="utf-8"></script>
+    <!--当script标签中有src属性，标签中间写的东西无效-->
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <!--
+        一、Dom
+            1. HTML 事件 事件处理直接写在html元素里面
+            2. DOM 0级事件: 一个元素同一个事件只能设定 一个事件程序
+            3. DOM 2级事件: 一个元素同一个事件只能设定 多个事件程序
+                addEventListener(事件名,事件程序,false-事件冒泡 true-事件捕获)
+                removeEventListener(事件名,事件程序,false-事件冒泡 true-事件捕获)
+            4. 常用：
+                onload          页面或图片加载完
+                onblur          元素失去焦点
+
+
+
+    -->
+<body>
+    <!-- 1. HTML 事件 -->
+    <button type="button" onclick="oc()">HTML触发</button>
+    <br><br><br><br><br>
+    <!-- 2. DOM 0级事件 -->
+    <button id="dom0" type="button">DOM 0触发</button>
+    <br><br><br><br><br>
+    <!-- 3. DOM 2级事件 -->
+    <button id="dom2" type="button">DOM 2触发</button>
+
+</body>
+<script>
+    console.log("1. HTML 事件")
+        function oc() {
+            console.log("onlick trigger")
+        }
+
+    console.log("2. DOM 0级事件")
+    var button = document.getElementById("dom0");
+    button.onclick = function () {
+        console.log("dom0 trigger");
+    }
+
+    console.log("3. DOM 2级事件")
+    var button2 = document.getElementById("dom2");
+    button2.addEventListener('click',function () {
+        console.log("dom2 trigger")
+    })
+</script>
+</html>
